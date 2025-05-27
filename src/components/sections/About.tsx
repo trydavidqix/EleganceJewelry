@@ -8,6 +8,7 @@ const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -16,6 +17,17 @@ const About = () => {
           trigger: sectionRef.current,
           start: "top center+=100",
           toggleActions: "play none none reverse",
+          onEnter: () => {
+            if (videoRef.current) {
+              videoRef.current.play();
+            }
+          },
+          onLeaveBack: () => {
+            if (videoRef.current) {
+              videoRef.current.pause();
+              videoRef.current.currentTime = 0;
+            }
+          },
         },
       });
 
@@ -43,17 +55,19 @@ const About = () => {
     <section id="about" ref={sectionRef} className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Imagem */}
+          {/* Image or Video */}
           <div
             ref={imageRef}
-            className="relative h-[500px] rounded-lg overflow-hidden shadow-xl"
+            className="relative rounded-lg overflow-hidden shadow-lg h-64 md:h-auto"
           >
-            <img
-              src="https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-              alt="Nossa História"
+            <video
+              ref={videoRef}
+              src="https://videos.pexels.com/video-files/6262752/6262752-uhd_2560_1440_25fps.mp4"
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
           </div>
 
           {/* Conteúdo */}

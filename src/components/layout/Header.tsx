@@ -46,7 +46,7 @@ const Header = () => {
               <li key={item.name}>
                 <Link
                   to={item.to}
-                  className="text-secondary hover:text-primary transition-colors duration-300 cursor-pointer"
+                  className="text-primary hover:text-primary transition-colors duration-300 cursor-pointer"
                   smooth={true}
                   duration={500}
                 >
@@ -79,7 +79,7 @@ const Header = () => {
                   <li key={item.name}>
                     <Link
                       to={item.to}
-                      className="block text-secondary hover:text-primary transition-colors duration-300"
+                      className="block text-primary hover:text-primary transition-colors duration-300"
                       smooth={true}
                       duration={500}
                       onClick={() => setIsMobileMenuOpen(false)}
