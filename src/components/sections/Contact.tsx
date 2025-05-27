@@ -136,7 +136,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 rows={4}
-                className="input"
+                className="input resize-none"
                 placeholder="Como podemos ajudar?"
               />
             </div>

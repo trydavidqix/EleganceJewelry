@@ -31,7 +31,7 @@ const products: Product[] = [
     description: "Anel em platina com safira azul real e diamantes",
     price: "R$ 15.800",
     image:
-      "https://images.unsplash.com/photo-1603561591411-07134e71a2a8?w=800&auto=format&fit=crop&q=60",
+      "https://images.pexels.com/photos/18451699/pexels-photo-18451699/free-photo-of-anel-de-prata-com-gema.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     category: "Anéis",
   },
   {
@@ -40,7 +40,7 @@ const products: Product[] = [
     description: "Brincos em ouro 18k com pérolas barrocas e diamantes",
     price: "R$ 8.500",
     image:
-      "https://images.unsplash.com/photo-1630019852942-f89202989a59?w=800&auto=format&fit=crop&q=60",
+      "https://images.pexels.com/photos/11744651/pexels-photo-11744651.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     category: "Brincos",
   },
   {
@@ -49,7 +49,7 @@ const products: Product[] = [
     description: "Brincos em ouro branco com diamantes em formato de gota",
     price: "R$ 9.900",
     image:
-      "https://images.unsplash.com/photo-1631729371254-42c2892f0e6e?w=800&auto=format&fit=crop&q=60",
+      "https://images.pexels.com/photos/10475792/pexels-photo-10475792.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     category: "Brincos",
   },
   {
@@ -58,7 +58,7 @@ const products: Product[] = [
     description: "Colar em ouro 18k com diamantes em corte brilhante",
     price: "R$ 18.500",
     image:
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=800&auto=format&fit=crop&q=60",
+      "https://images.pexels.com/photos/19820885/pexels-photo-19820885/free-photo-of-exibicao-visor-display-vitrine.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     category: "Colares",
   },
   {
@@ -67,7 +67,7 @@ const products: Product[] = [
     description: "Colar de pérolas cultivadas com fecho em ouro 18k",
     price: "R$ 7.200",
     image:
-      "https://images.unsplash.com/photo-1611652022419-a9419f743f7c?w=800&auto=format&fit=crop&q=60",
+      "https://images.pexels.com/photos/18540972/pexels-photo-18540972/free-photo-of-preto-e-branco-p-b-mulher-vintage.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     category: "Colares",
   },
   {
@@ -76,7 +76,7 @@ const products: Product[] = [
     description: "Aliança em ouro 18k com diamantes incrustados",
     price: "R$ 6.800",
     image:
-      "https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?w=800&auto=format&fit=crop&q=60",
+      "https://images.pexels.com/photos/10976653/pexels-photo-10976653.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     category: "Alianças",
   },
   {
@@ -85,7 +85,7 @@ const products: Product[] = [
     description: "Aliança em ouro 18k com acabamento polido",
     price: "R$ 4.200",
     image:
-      "https://images.unsplash.com/photo-1602751584559-8ba73aad10e1?w=800&auto=format&fit=crop&q=60",
+      "https://images.pexels.com/photos/10475791/pexels-photo-10475791.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
     category: "Alianças",
   },
 ];
@@ -130,7 +130,7 @@ const Products = () => {
             onClick={() => setSelectedCategory("Todos")}
             className={`px-6 py-2 rounded-full transition-colors ${
               selectedCategory === "Todos"
-                ? "bg-gold text-white"
+                ? "bg-gold text-primary"
                 : "bg-white text-gold hover:bg-gold/10"
             }`}
           >
@@ -143,7 +143,7 @@ const Products = () => {
                 onClick={() => setSelectedCategory(category)}
                 className={`px-6 py-2 rounded-full transition-colors ${
                   selectedCategory === category
-                    ? "bg-gold text-white"
+                    ? "bg-gold text-primary"
                     : "bg-white text-gold hover:bg-gold/10"
                 }`}
               >
@@ -169,17 +169,12 @@ const Products = () => {
                 transition={{ duration: 0.5 }}
                 className="bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow"
               >
-                <div className="relative h-64 overflow-hidden">
+                <div className="relative h-48 sm:h-64 overflow-hidden">
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/20 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <button className="bg-gold text-white px-6 py-2 rounded-full hover:bg-gold/90 transition-colors">
-                      Ver Detalhes
-                    </button>
-                  </div>
                 </div>
                 <div className="p-6">
                   <span className="text-sm text-gold font-medium">
@@ -193,9 +188,6 @@ const Products = () => {
                     <span className="text-2xl font-playfair text-gold">
                       {product.price}
                     </span>
-                    <button className="text-gold hover:text-gold/80 transition-colors">
-                      <FaHeart className="w-6 h-6" />
-                    </button>
                   </div>
                 </div>
               </motion.div>

@@ -52,16 +52,18 @@ const Hero = () => {
       ref={heroRef}
       className="relative h-screen flex items-center justify-center overflow-hidden pt-20"
     >
-      {/* Background Image */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage:
-            'url("https://images.unsplash.com/photo-1573408301185-9146fe634ad0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")',
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
-      >
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0">
+        <video
+          src="https://videos.pexels.com/video-files/6263177/6263177-uhd_2560_1440_25fps.mp4"
+          loop
+          muted
+          autoPlay
+          playsInline
+          crossOrigin=""
+          preload="metadata"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-black bg-opacity-50" />
       </div>
 
@@ -82,7 +84,7 @@ const Hero = () => {
         </p>
         <div ref={ctaRef} className="space-x-4">
           <Link
-            to="products"
+            to="produtos"
             className="btn-primary"
             smooth={true}
             duration={500}

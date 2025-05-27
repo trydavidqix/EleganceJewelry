@@ -18,7 +18,7 @@ const Header = () => {
 
   const navItems = [
     { name: "Início", to: "hero" },
-    { name: "Produtos", to: "products" },
+    { name: "Produtos", to: "produtos" },
     { name: "Sobre", to: "about" },
     { name: "Contato", to: "contact" },
   ];
@@ -31,22 +31,23 @@ const Header = () => {
     >
       <div className="container mx-auto px-4">
         <nav className="flex items-center justify-between">
+          {/* Logo */}
           <Link
             to="hero"
-            className="text-2xl font-sans font-bold text-primary cursor-pointer"
+            className="text-2xl font-bold text-primary cursor-pointer"
             smooth={true}
             duration={500}
           >
             Elegance Jewelry
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Nav */}
           <ul className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <li key={item.name}>
                 <Link
                   to={item.to}
-                  className="text-primary hover:text-primary transition-colors duration-300 cursor-pointer"
+                  className="text-primary hover:text-secondary transition-colors duration-300 cursor-pointer"
                   smooth={true}
                   duration={500}
                 >
@@ -58,28 +59,29 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-secondary"
+            className="md:hidden text-primary focus:outline-none"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </nav>
 
-        {/* Mobile Navigation */}
+        {/* Mobile Menu */}
         <AnimatePresence>
           {isMobileMenuOpen && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="md:hidden"
+              transition={{ duration: 0.3 }}
+              className="bg-white shadow-md rounded-md mt-4 overflow-hidden md:hidden"
             >
-              <ul className="py-4 space-y-4">
+              <ul className="flex flex-col px-4 py-4 space-y-4">
                 {navItems.map((item) => (
                   <li key={item.name}>
                     <Link
                       to={item.to}
-                      className="block text-primary hover:text-primary transition-colors duration-300"
+                      className="block text-primary hover:text-secondary transition-colors duration-300 cursor-pointer"
                       smooth={true}
                       duration={500}
                       onClick={() => setIsMobileMenuOpen(false)}

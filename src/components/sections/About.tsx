@@ -86,7 +86,7 @@ const About = () => {
               melhores materiais, desde ouro 18k até pedras preciosas
               certificadas, garantindo a qualidade e durabilidade de cada peça.
             </p>
-            <div className="grid grid-cols-2 gap-6 pt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-6">
               <div className="text-center">
                 <h3 className="text-3xl font-bold text-primary mb-2">15+</h3>
                 <p className="text-gray-600">Anos de Experiência</p>
