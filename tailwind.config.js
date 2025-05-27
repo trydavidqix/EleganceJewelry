@@ -22,8 +22,8 @@ export default {
   			},
   			accent: {
   				DEFAULT: 'hsl(var(--accent))',
-  				dark: '#8B6914',
-  				light: '#DAA520',
+  				dark: '#8B7355',
+  				light: '#E5D3B3',
   				foreground: 'hsl(var(--accent-foreground))'
   			},
   			background: 'hsl(var(--background))',

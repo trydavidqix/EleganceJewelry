@@ -71,7 +71,7 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10 text-center text-white">
         <h1
           ref={titleRef}
-          className="text-5xl md:text-7xl font-bold mb-6 font-sans"
+          className="text-5xl md:text-7xl font-bold mb-6 font-sans text-white"
         >
           Elegance Jewelry
         </h1>

@@ -1,11 +1,3 @@
-import {
-  FaFacebook,
-  FaInstagram,
-  FaWhatsapp,
-  FaEnvelope,
-  FaPhone,
-} from "react-icons/fa";
-
 // Removendo importação de componentes do Hover Card do shadcn/ui
 // import {
 //   HoverCard,
@@ -32,7 +24,7 @@ const Footer = () => {
 
         {/* Desenvolvedor */}
         <p className="text-gray-300">
-          Desenvolvido por
+          Desenvolvido por{" "}
           <a
             href="https://github.com/trydavidqix"
             target="_blank"
