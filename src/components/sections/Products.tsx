@@ -118,7 +118,11 @@ const Products = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="produtos" className="py-20 bg-cream">
+    <section
+      ref={sectionRef}
+      id="produtos"
+      className="py-20 bg-cream w-screen overflow-x-hidden"
+    >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-playfair text-gold text-center mb-12">
           Nossas Joias

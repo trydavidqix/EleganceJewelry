@@ -82,7 +82,11 @@ const Hero = () => {
           Descubra a beleza atemporal em cada peça, onde a elegância encontra a
           sofisticação
         </p>
-        <div ref={ctaRef} className="space-x-4">
+        {/* Botões CTA */}
+        <div
+          ref={ctaRef}
+          className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 space-x-0 sm:space-x-4"
+        >
           <Link
             to="produtos"
             className="btn-primary"

@@ -54,9 +54,7 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você implementaria a lógica de envio do formulário
     console.log("Form data:", formData);
-    // Limpar o formulário após o envio
     setFormData({ name: "", email: "", message: "" });
     alert("Mensagem enviada com sucesso!");
   };
@@ -69,7 +67,11 @@ const Contact = () => {
   };
 
   return (
-    <section id="contact" ref={sectionRef} className="py-20 bg-gray-50">
+    <section
+      ref={sectionRef}
+      id="contact"
+      className="py-20 bg-gray-50 w-screen overflow-x-hidden"
+    >
       <div className="container mx-auto px-4">
         <h2 className="section-title text-secondary">Entre em Contato</h2>
         <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
